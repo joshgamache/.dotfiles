@@ -1,0 +1,7 @@
+#:schema https://mise.jdx.dev/schema/mise.json
+
+[settings]
+dotfiles.root = "~/.dotfiles"
+
+[dotfiles]
+"~/.config/mise/config.toml" = "~/.dotfiles/mise.toml"
