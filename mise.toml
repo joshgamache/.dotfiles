@@ -3,5 +3,9 @@
 [settings]
 dotfiles.root = "~/.dotfiles"
 
+[tools]
+hk = "latest"
+pkl = "latest"
+
 [dotfiles]
 "~/.config/mise/config.toml" = "~/.dotfiles/mise.toml"
