@@ -28,6 +28,7 @@ tealdeer = "latest"
 gh = "latest"
 lazygit = "latest"
 hk = "latest"
+betterleaks = "latest"
 delta = "latest"
 
 # Language servers

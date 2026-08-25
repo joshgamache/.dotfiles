@@ -11,8 +11,10 @@ local linters = new Mapping<String, Step> {
 
     // Scan for secrets and other sensitive data
     ["detect_private_key"] = Builtins.detect_private_key
+    ["betterleaks"] = Builtins.betterleaks
 
     // Language-specific linters
+    ["toml_check"] = Builtins.tombi
     ["mise_check"] = Builtins.mise
     ["pkl_check"] = Builtins.pkl
 }
