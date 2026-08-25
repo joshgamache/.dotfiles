@@ -3,7 +3,27 @@
 [settings]
 dotfiles.root = "~/.dotfiles"
 
+[bootstrap.packages]
+# Core shell tools
+"apt:git" = "latest"
+"apt:fish" = "latest"
+"pacman:git" = "latest"
+"pacman:fish" = "fish"
+
 [tools]
+# Core shell tools
+starship = "latest"
+zoxide = "latest"
+fzf = "latest"
+bat = "latest"
+dust = "latest"
+eza = "latest"
+ripgrep = "latest"
+fd = "latest"
+sd = "latest"
+"aqua:dalance/procs" = "latest"
+tealdeer = "latest"
+
 # Git tools
 gh = "latest"
 lazygit = "latest"
