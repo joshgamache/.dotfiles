@@ -4,7 +4,14 @@
 dotfiles.root = "~/.dotfiles"
 
 [tools]
+# Git tools
+gh = "latest"
+lazygit = "latest"
 hk = "latest"
+delta = "latest"
+
+# Language servers
+tombi = "latest"
 pkl = "latest"
 
 [dotfiles]
