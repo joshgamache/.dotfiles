@@ -1,0 +1,9 @@
+# Globally ignored things
+.scratch/
+
+# IDE stuff
+.zed/
+
+# Local mise, not to commit
+mise.local.*
+.mise.local.*

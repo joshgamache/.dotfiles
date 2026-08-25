@@ -36,4 +36,5 @@ tombi = "latest"
 pkl = "latest"
 
 [dotfiles]
+"~/.config/git/ignore" = {}
 "~/.config/mise/config.toml" = "~/.dotfiles/mise.toml"
