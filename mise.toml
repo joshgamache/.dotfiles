@@ -3,12 +3,18 @@
 [settings]
 dotfiles.root = "~/.dotfiles"
 
+[env]
+CORE_DOTFILES_VERSION = "v2026.08.28.1"
+
 [bootstrap.packages]
 # Core shell tools
 "apt:git" = "latest"
 "apt:fish" = "latest"
 "pacman:git" = "latest"
 "pacman:fish" = "fish"
+
+[bootstrap.user]
+login_shell = "/usr/bin/fish"
 
 [tools]
 # Core shell tools
@@ -36,5 +42,7 @@ tombi = "latest"
 pkl = "latest"
 
 [dotfiles]
+"~/.config/fish/conf.d/abbrs.fish" = {}
+"~/.config/fish/config.fish" = {}
 "~/.config/git/ignore" = {}
 "~/.config/mise/config.toml" = "~/.dotfiles/mise.toml"
