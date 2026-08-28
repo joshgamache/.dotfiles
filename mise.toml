@@ -46,3 +46,59 @@ pkl = "latest"
 "~/.config/fish/config.fish" = {}
 "~/.config/git/ignore" = {}
 "~/.config/mise/config.toml" = "~/.dotfiles/mise.toml"
+
+[tasks.bootstrap]
+description = "Generate Fish completions from core tools"
+shell = "fish -c"
+run = '''
+set -l COMPLETIONS_DIR ~/.config/fish/completions
+mkdir -p $COMPLETIONS_DIR
+
+# TLDR doesn't currently have a command to generate completions, so we acquire it from the release instead
+if type -q tldr
+  tldr --update
+  set -l APP_VERSION $(tldr --version | string match -r '\d+.\d+.\d+')
+  curl -L https://github.com/tealdeer-rs/tealdeer/releases/download/v{$APP_VERSION}/completions_fish -o $COMPLETIONS_DIR/tldr.fish
+end
+
+if type -q mise
+  mise completion fish > $COMPLETIONS_DIR/mise.fish
+  echo Updated completions for Mise
+end
+
+if type -q starship
+  starship completions fish > $COMPLETIONS_DIR/starship.fish
+  echo Updated completions for Starship
+end
+
+if type -q bat
+  bat --completion fish > $COMPLETIONS_DIR/bat.fish
+  echo Updated completions for Bat
+end
+
+if type -q fd
+  fd --gen-completions fish > $COMPLETIONS_DIR/fd.fish
+  echo Updated completions for Fd
+end
+
+if type -q gh
+  gh completion -s fish > $COMPLETIONS_DIR/gh.fish
+  echo Updated completions for gh
+
+end
+
+if type -q lazygit
+  lazygit completion fish > $COMPLETIONS_DIR/lazygit.fish
+  echo Updated completions for lazygit
+
+end
+
+if type -q hk
+  hk completion fish > $COMPLETIONS_DIR/hk.fish
+  echo Updated completions for hk
+end
+
+if type -q procs
+  procs --gen-completion-out fish > $COMPLETIONS_DIR/procs.fish
+end
+'''
