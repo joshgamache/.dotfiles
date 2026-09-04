@@ -2,6 +2,9 @@
 
 [settings]
 dotfiles.root = "~/.dotfiles"
+# Instructs mise to fetch the authenticated token from gh and expose it
+# as an environment variable (GITHUB_TOKEN) to all active shells.
+github.use_git_credentials = true
 
 [env]
 CORE_DOTFILES_VERSION = "v2026.08.28.1"
@@ -48,7 +51,12 @@ pkl = { version = "latest", postinstall = "pkl shell-completion fish > $FISH_VEN
 usage = { version = "latest", postinstall = "usage --completions fish > $FISH_VENDOR_COMPLETIONS_DIR/usage.fish && echo Completions installed for $MISE_TOOL_NAME@$MISE_TOOL_VERSION" }
 
 [dotfiles]
+"~/.config/mise/mise.local.toml" = { source = "~/.dotfiles/mise.local.toml", mode = "copy" }
+"~/.config/mise/config.toml" = "~/.dotfiles/mise.toml"
 "~/.config/fish/conf.d/abbrs.fish" = {}
 "~/.config/fish/config.fish" = {}
+"~/.config/git/allowed_signers" = { source = ".config/git/allowed_signers.tmpl", mode = "template" }
+"~/.config/git/config" = { source = ".config/git/config.tmpl", mode = "template" }
+"~/.config/git/config_home" = { source = ".config/git/config_home.tmpl", mode = "template" }
+"~/.config/git/config_work" = { source = ".config/git/config_work.tmpl", mode = "template" }
 "~/.config/git/ignore" = {}
-"~/.config/mise/config.toml" = "~/.dotfiles/mise.toml"

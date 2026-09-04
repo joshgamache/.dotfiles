@@ -1,0 +1,27 @@
+[core]
+	sshcommand = ssh.exe
+[user]
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIzfWqdZNhznHnzkDGhLXfWGNJta5LFcA0hBaE19HyHr
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	{% if exec(command='grep -qi microsoft /proc/version && echo true || echo false') == "true" %}
+	program = /mnt/c/Users/j11e/AppData/Local/Microsoft/WindowsApps/op-ssh-sign-wsl.exe
+	{% endif %}
+	allowedsignersfile = ~/.config/git/allowed_signers
+[commit]
+	gpgsign = true
+[init]
+	defaultbranch = main
+[credential "https://github.com"]
+	helper =
+	helper = !~/.local/share/mise/shims/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper =
+	helper = !~/.local/share/mise/shims/gh auth git-credential
+
+[includeIf "gitdir:~/forge/"]
+	path = ~/.config/git/config_work
+
+[includeIf "gitdir:~/anvil/"]
+	path = ~/.config/git/config_home
