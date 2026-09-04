@@ -36,6 +36,7 @@ fd = { version = "latest", postinstall = "fd --gen-completions fish > $FISH_VEND
 sd = "latest"
 "aqua:dalance/procs" = { version = "latest", postinstall = "procs --gen-completion-out fish > $COMPLETIONS_DIR/procs.fish && echo Completions installed for $MISE_TOOL_NAME@$MISE_TOOL_VERSION" }
 tealdeer = { version = "latest", postinstall = "tldr --update && curl -sL https://github.com/tealdeer-rs/tealdeer/releases/download/v{$MISE_TOOL_VERSION}/completions_fish -o $FISH_VENDOR_COMPLETIONS_DIR/tldr.fish && echo Completions installed for $MISE_TOOL_NAME@$MISE_TOOL_VERSION" }
+yazi = "latest"
 
 # Git tools
 gh = { version = "latest", postinstall = "gh completion -s fish > $FISH_VENDOR_COMPLETIONS_DIR/gh.fish && echo Completions installed for $MISE_TOOL_NAME@$MISE_TOOL_VERSION" }
@@ -47,8 +48,12 @@ jj = { version = "latest", postinstall = "COMPLETE=fish jj | source" }
 
 # Language servers
 tombi = { version = "latest", postinstall = "tombi completion fish > $FISH_VENDOR_COMPLETIONS_DIR/tombi.fish && echo Completions installed for $MISE_TOOL_NAME@$MISE_TOOL_VERSION" }
+harper-ls = "latest"
+marksman = "latest"
+shellcheck = "latest"
 pkl = { version = "latest", postinstall = "pkl shell-completion fish > $FISH_VENDOR_COMPLETIONS_DIR/pkl.fish && echo Completions installed for $MISE_TOOL_NAME@$MISE_TOOL_VERSION" }
 usage = { version = "latest", postinstall = "usage --completions fish > $FISH_VENDOR_COMPLETIONS_DIR/usage.fish && echo Completions installed for $MISE_TOOL_NAME@$MISE_TOOL_VERSION" }
+jnv = "latest"
 
 [dotfiles]
 "~/.config/mise/mise.local.toml" = { source = "~/.dotfiles/mise.local.toml", mode = "copy" }
