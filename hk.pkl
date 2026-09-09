@@ -28,7 +28,6 @@ hooks {
     ["commit-message"] {
         steps {
           ["check_conventional_commit"] = Builtins.check_conventional_commit
-          ...linters
         }
     }
     ["fix"] {
