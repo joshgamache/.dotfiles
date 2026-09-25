@@ -1,8 +1,11 @@
 # Activate mise so all tool paths are globally accessible
-$HOME/.local/bin/mise activate fish | source
+if status is-interactive
+    $HOME/.local/bin/mise activate fish | source
+else
+    $HOME/.local/bin/mise activate fish --shims | source
+end
 
 # globals
-set -gx BROWSER explorer.exe
 set -gx VISUAL nano
 set -gx EDITOR nano
 
