@@ -4,6 +4,10 @@
 # IDE stuff
 .zed/
 
+# Ignore IDE AI agent skill folders
+skills/
+.agents/
+
 # Local mise, not to commit
 mise.local.*
 .mise.local.*

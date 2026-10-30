@@ -1,5 +1,6 @@
 [core]
 	sshcommand = ssh.exe
+	pager = delta
 [user]
 	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIzfWqdZNhznHnzkDGhLXfWGNJta5LFcA0hBaE19HyHr
 [gpg]
@@ -13,6 +14,10 @@
 	gpgsign = true
 [init]
 	defaultbranch = main
+[interactive]
+	diffFilter = delta --color-only
+[log]
+	showSignature = true
 [credential "https://github.com"]
 	helper =
 	helper = !~/.local/share/mise/shims/gh auth git-credential
