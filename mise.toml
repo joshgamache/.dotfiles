@@ -50,15 +50,16 @@ prompt = "Directory for work-related git projects (uses work configs)"
 default = "$HOME/anvil"
 prompt = "Directory for personal projects (uses personal configs)"
 
+[bootstrap.directories.'~/.local/share/fish/vendor_completions.d']
+os = "unix"
+mode = "0755"
+
 [bootstrap.packages]
 # Core shell tools
 "apt:git" = "latest"
 "apt:fish" = "latest"
 "pacman:git" = "latest"
 "pacman:fish" = "latest"
-
-[bootstrap.hooks.pre-tools]
-run = "mkdir -p $FISH_VENDOR_COMPLETIONS_DIR && mise completion fish > $FISH_VENDOR_COMPLETIONS_DIR/mise.fish"
 
 [bootstrap.services.mise-history]
 builtin = "history-watch"
