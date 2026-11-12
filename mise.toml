@@ -68,9 +68,6 @@ mode = "0755"
 [bootstrap.repos]
 "~/.dotfiles" = { url = "{{ vars.bs_dotfile_repo }}" }
 
-[bootstrap.services.mise-history]
-builtin = "history-watch"
-
 [bootstrap.user]
 login_shell = "/usr/bin/fish"
 
@@ -116,10 +113,5 @@ lazydocker = "latest"
 "~/.config/git/config_home" = { source = ".config/git/config_home.tmpl", mode = "template" }
 "~/.config/git/config_work" = { source = ".config/git/config_work.tmpl", mode = "template" }
 "~/.config/git/ignore" = {}
-"~/.config/harper-ls" = { mode = "track" }
-"~/.config/jnv" = { mode = "track" }
-"~/.config/lazydocker" = { mode = "track" }
-"~/.config/lazygit" = { mode = "track" }
-"~/.config/mise" = { mode = "track" }
 "~/.config/mise/config.toml" = "~/.dotfiles/mise.toml"
 "~/.config/mise/mise.local.toml" = { source = "~/.dotfiles/mise.local.toml", mode = "copy" }
