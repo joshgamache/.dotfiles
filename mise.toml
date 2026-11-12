@@ -92,7 +92,7 @@ lazygit = { version = "latest", postinstall = "lazygit completion fish > $FISH_V
 hk = { version = "latest", postinstall = "hk completion fish > $FISH_VENDOR_COMPLETIONS_DIR/hk.fish && echo Completions installed for $MISE_TOOL_NAME@$MISE_TOOL_VERSION" }
 betterleaks = "latest"
 delta = "latest"
-jj = { version = "latest", postinstall = "COMPLETE=fish jj | source" }
+jj = "latest"
 
 # Language servers
 tombi = { version = "latest", postinstall = "tombi completion fish > $FISH_VENDOR_COMPLETIONS_DIR/tombi.fish && echo Completions installed for $MISE_TOOL_NAME@$MISE_TOOL_VERSION" }
