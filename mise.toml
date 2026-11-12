@@ -9,7 +9,7 @@ dotfiles.root = "~/.dotfiles"
 github.use_git_credentials = true
 
 [env]
-CORE_DOTFILES_VERSION = "v2026.08.28.1"
+CORE_DOTFILES_VERSION = "v2026.11.12.1"
 FISH_VENDOR_COMPLETIONS_DIR = "{{env.XDG_DATA_HOME | default(value='$HOME/.local/share')}}/fish/vendor_completions.d"
 
 # Use with mise bootstrap --prompt-vars
