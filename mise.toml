@@ -1,5 +1,7 @@
 #:schema https://mise.jdx.dev/schema/mise.json
 
+min_version = "2026.10.24"
+
 [settings]
 dotfiles.root = "~/.dotfiles"
 # Instructs mise to fetch the authenticated token from gh and expose it
@@ -10,6 +12,44 @@ github.use_git_credentials = true
 CORE_DOTFILES_VERSION = "v2026.08.28.1"
 FISH_VENDOR_COMPLETIONS_DIR = "{{env.XDG_DATA_HOME | default(value='$HOME/.local/share')}}/fish/vendor_completions.d"
 
+# Use with mise bootstrap --prompt-vars
+# Alternatively, make a mise.local.toml from mise.local-example.toml
+[vars.git_work_email]
+prompt = "Email for work git contributions"
+required = true
+
+[vars.git_personal_email]
+prompt = "Email for personal git contributions"
+required = true
+
+[vars.git_home_email]
+prompt = "Email for home git contributions"
+required = true
+
+[vars.git_pkey]
+prompt = "Public key for git signing"
+required = true
+
+[vars.git_pkey_type]
+default = "ssh-ed25519"
+prompt = "Public key type for git signing"
+
+[vars.bs_fullname]
+prompt = "Fullname"
+required = true
+
+[vars.bs_user]
+prompt = "OS username"
+required = true
+
+[vars.bs_work_dir]
+default = "$HOME/forge"
+prompt = "Directory for work-related git projects (uses work configs)"
+
+[vars.bs_personal_dir]
+default = "$HOME/anvil"
+prompt = "Directory for personal projects (uses personal configs)"
+
 [bootstrap.packages]
 # Core shell tools
 "apt:git" = "latest"
@@ -19,6 +59,9 @@ FISH_VENDOR_COMPLETIONS_DIR = "{{env.XDG_DATA_HOME | default(value='$HOME/.local
 
 [bootstrap.hooks.pre-tools]
 run = "mkdir -p $FISH_VENDOR_COMPLETIONS_DIR && mise completion fish > $FISH_VENDOR_COMPLETIONS_DIR/mise.fish"
+
+[bootstrap.services.mise-history]
+builtin = "history-watch"
 
 [bootstrap.user]
 login_shell = "/usr/bin/fish"
@@ -58,8 +101,6 @@ git-cliff = "latest"
 lazydocker = "latest"
 
 [dotfiles]
-"~/.config/mise/mise.local.toml" = { source = "~/.dotfiles/mise.local.toml", mode = "copy" }
-"~/.config/mise/config.toml" = "~/.dotfiles/mise.toml"
 "~/.config/fish/conf.d/abbrs.fish" = {}
 "~/.config/fish/config.fish" = {}
 "~/.config/git/allowed_signers" = { source = ".config/git/allowed_signers.tmpl", mode = "template" }
@@ -67,3 +108,6 @@ lazydocker = "latest"
 "~/.config/git/config_home" = { source = ".config/git/config_home.tmpl", mode = "template" }
 "~/.config/git/config_work" = { source = ".config/git/config_work.tmpl", mode = "template" }
 "~/.config/git/ignore" = {}
+"~/.config/mise" = { mode = "track" }
+"~/.config/mise/config.toml" = "~/.dotfiles/mise.toml"
+"~/.config/mise/mise.local.toml" = { source = "~/.dotfiles/mise.local.toml", mode = "copy" }

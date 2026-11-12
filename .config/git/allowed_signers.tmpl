@@ -1,6 +1,6 @@
-{% set emails = [vars.bs_work_email_address, vars.bs_home_email_address, vars.bs_personal_email_address] -%}
+{% set emails = [vars.git_work_email, vars.git_home_email, vars.git_personal_email] -%}
 {% for email in emails -%}
 {% if email -%}
-{{ email | trim }} {{ vars.bs_git_pkey_type | trim }} {{ vars.bs_git_pkey | trim }}
+{{ email | trim }} {{ vars.git_pkey_type | trim }} {{ vars.git_pkey | trim }}
 {% endif -%}
 {% endfor %}

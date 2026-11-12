@@ -1,0 +1,15 @@
+[vars]
+# Emails for Git
+git_work_email = "work@example.com"
+git_personal_email = "personal@example.com"
+git_home_email = "home@example.com"
+
+# Public key for Git
+git_pkey = ""
+git_pkey_type = "ssh-ed25519"
+
+# Users and directories
+bs_fullname = "First Lastname"
+bs_user = "flastname"
+bs_work_dir = "$HOME/somedir"
+bs_personal_dir = "$HOME/anotherdir"
