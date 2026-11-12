@@ -50,7 +50,11 @@ prompt = "Directory for work-related git projects (uses work configs)"
 default = "$HOME/anvil"
 prompt = "Directory for personal projects (uses personal configs)"
 
-[bootstrap.directories.'~/.local/share/fish/vendor_completions.d']
+[vars.bs_dotfile_repo]
+prompt = "Git repository to pull dotfiles from (ie. git@github.com:example/dotfiles.git)"
+required = true
+
+[bootstrap.directories."~/.local/share/fish/vendor_completions.d"]
 os = "unix"
 mode = "0755"
 
@@ -60,6 +64,9 @@ mode = "0755"
 "apt:fish" = "latest"
 "pacman:git" = "latest"
 "pacman:fish" = "latest"
+
+[bootstrap.repos]
+"~/.dotfiles" = { url = "{{ vars.bs_dotfile_repo }}" }
 
 [bootstrap.services.mise-history]
 builtin = "history-watch"
