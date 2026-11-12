@@ -82,7 +82,7 @@ eza = "latest"
 ripgrep = "latest"
 fd = { version = "latest", postinstall = "fd --gen-completions fish > $FISH_VENDOR_COMPLETIONS_DIR/fd.fish && echo Completions installed for $MISE_TOOL_NAME@$MISE_TOOL_VERSION" }
 sd = "latest"
-"aqua:dalance/procs" = { version = "latest", postinstall = "procs --gen-completion-out fish > $COMPLETIONS_DIR/procs.fish && echo Completions installed for $MISE_TOOL_NAME@$MISE_TOOL_VERSION" }
+"github:dalance/procs" = { version = "latest", postinstall = "procs --gen-completion-out fish > $COMPLETIONS_DIR/procs.fish && echo Completions installed for $MISE_TOOL_NAME@$MISE_TOOL_VERSION" }
 tealdeer = { version = "latest", postinstall = "tldr --update && curl -sL https://github.com/tealdeer-rs/tealdeer/releases/download/v{$MISE_TOOL_VERSION}/completions_fish -o $FISH_VENDOR_COMPLETIONS_DIR/tldr.fish && echo Completions installed for $MISE_TOOL_NAME@$MISE_TOOL_VERSION" }
 yazi = "latest"
 
