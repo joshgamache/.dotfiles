@@ -55,7 +55,7 @@ prompt = "Directory for personal projects (uses personal configs)"
 "apt:git" = "latest"
 "apt:fish" = "latest"
 "pacman:git" = "latest"
-"pacman:fish" = "fish"
+"pacman:fish" = "latest"
 
 [bootstrap.hooks.pre-tools]
 run = "mkdir -p $FISH_VENDOR_COMPLETIONS_DIR && mise completion fish > $FISH_VENDOR_COMPLETIONS_DIR/mise.fish"

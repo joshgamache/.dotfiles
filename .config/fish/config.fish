@@ -1,8 +1,8 @@
 # Activate mise so all tool paths are globally accessible
 if status is-interactive
-    $HOME/.local/bin/mise activate fish | source
+    ~/.local/bin/mise activate fish | source
 else
-    $HOME/.local/bin/mise activate fish --shims | source
+    ~/.local/bin/mise activate fish --shims | source
 end
 
 # globals
